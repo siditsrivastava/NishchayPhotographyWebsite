@@ -10,7 +10,7 @@ import Uploadfaq from './Components/admin/Uploadfaq';
 import UploadVideo from './Components/admin/UploadVideo';
 import Prewedding from './Components/Prewedding/Prewedding';
 import UploadPreweddingImg from './Components/admin/UploadPreweddingImg';
-import FullPic from './Components/Gallery/FullPic'
+// import FullPic from './Components/Gallery/FullPic'
 import { useEffect , useState} from 'react';
 import Loading from './Components/Loading/Loading';
 
@@ -31,15 +31,15 @@ function App() {
      <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/Gallery" element={<Gallery/>}/>
-      <Route path="/PreWedding" element={<Prewedding/>}/>
+      {/* <Route path="/PreWedding" element={<Prewedding/>}/> */}
       <Route path="/video" element={<Video/>}/>
       <Route path="/faq" element={<Faq/>}/>
       <Route path="/contactUs" element={<Contactus/>}/>
       <Route path="/Upload/gallery" element={<UploadImage/>}/>
       <Route path="/Upload/Faq" element={<Uploadfaq/>}/>  
       <Route path="/Upload/youtube/videoLink" element={<UploadVideo/>}/> 
-      <Route path="/Upload/prewedding" element={<UploadPreweddingImg/>}/> 
-      <Route path="/Upload/:image" element={<FullPic/>}/> 
+      {/* <Route path="/Upload/prewedding" element={<UploadPreweddingImg/>}/>  */}
+      {/* <Route path="/Upload/:image" element={<FullPic/>}/>  */}
      </Routes> : <Loading/> }
      </BrowserRouter>
    </>

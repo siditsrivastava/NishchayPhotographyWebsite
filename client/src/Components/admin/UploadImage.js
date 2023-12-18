@@ -31,7 +31,7 @@ const UploadImage = () => {
         const formData = new FormData();
         formData.append("file", imageUpload);
         formData.append("category", category);
-        axios.post("/upload", formData
+        axios.post("http://localhost:4000/upload", formData
       
           )
           .then((res) => console.log(res))

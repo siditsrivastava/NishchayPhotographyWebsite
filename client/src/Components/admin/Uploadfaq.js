@@ -22,7 +22,7 @@ const Uploadfaq = () => {
         console.log("Please Provide the Question and Answer !!");
       } else {
         console.log(faq);
-        const res = await fetch("/faq", {
+        const res = await fetch("http://localhost:4000/faq", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -22,7 +22,7 @@ const UploadVideo = () => {
         if(!video){
           alert("Please Provide the Video Link");
         }else {
-          const res = await fetch("/videoupload" , {
+          const res = await fetch("http://localhost:4000/videoupload" , {
             method : "POST",
             headers : {
               "Content-Type" : "application/json"

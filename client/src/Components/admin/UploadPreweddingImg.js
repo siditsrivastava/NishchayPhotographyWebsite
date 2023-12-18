@@ -20,7 +20,7 @@ const onSubmit = (e) => {
     }else {
         const formData = new FormData();
         formData.append("image" , userpreweddingimage)
-        axios.post("https://nishchayphotographyapi.onrender.com/prewedddingImgUpload" ,formData)
+        axios.post("http://localhost:4000/prewedddingImgUpload" ,formData)
         .then((res) => {
          console.log(res);
         }).catch((err) => {

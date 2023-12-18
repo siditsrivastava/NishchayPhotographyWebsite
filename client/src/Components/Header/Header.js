@@ -14,8 +14,6 @@ const Header = () => {
         <div className="logo">
           <h2>
             <Link to="/">
-            {/* <span>N</span>ishchay
-            <span>P</span>hotography */}
             <img src={logo} className="logo" alt="logo"/>
             </Link>           
           </h2>
@@ -31,9 +29,9 @@ const Header = () => {
             <li>
               <Link to="/video" style={{"color":"white"}}>Video</Link>
             </li>
-            <li>
-              <Link to="/PreWedding" style={{"color":"white"}}>PreWedding</Link>
-            </li>
+            {/* <li>
+              <Link to="/PreWedding" style={{"color":"gold"}}>PreWedding</Link>
+            </li> */}
             <li>
               <Link to="/faq" style={{"color":"white"}}>Faq</Link>
             </li>

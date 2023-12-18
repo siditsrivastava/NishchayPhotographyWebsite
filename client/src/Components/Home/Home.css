@@ -7,8 +7,10 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Borel', cursive;
-  }
+    font-family: 'Roboto', sans-serif;
+    /* background:fixed; */
+    /* font-weight: bold; */
+    }
   .home-content {
     width: auto;
     height: 300px;
@@ -26,7 +28,7 @@
     color: white;
     padding-top: 250px;
     /* font-family: "Raleway", sans-serif; */
-    font-family: 'Borel', cursive;
+    font-family: 'Roboto', sans-serif;
   }
   .welcome-note h1 {
     padding-top: 200px;
@@ -43,7 +45,7 @@
     word-spacing: 5px;
     padding-left: 50px;
     /* font-family: "Dancing Script", cursive; */
-    font-family: 'Borel', cursive;
+    font-family: 'Roboto', sans-serif;
     margin-top: 10px;
     
   }

@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import Loader from "../Loader/Loader";
+import Loading from "../Loading/Loading";
 
 const Video = () => {
   const [videoData, setVideoData] = useState([]);
@@ -12,10 +13,11 @@ const Video = () => {
 
   useEffect(() => {
     axios
-      .get("https://nishchayphotographyapi.onrender.com/videofetching")
+      .get("/videofetching")
       .then((res) => {
         setLoading(true);
         setVideoData(res.data);
+        console.log(res.data);
       })
       .then((err) => {
         console.log(err);
@@ -45,22 +47,24 @@ const Video = () => {
         <div className="video-title-section container">
           <hr></hr>
           <h1>My Video.</h1>
-          <hr style={{backgroundColor:"#b55467"}}></hr>
+          <hr style={{ backgroundColor: "#b55467" }}></hr>
         </div>
         <div className="youtube-viedo-section container">
-          <div className="video-card">
-            {loading ? (
-              videoData.slice(0, `${page}`).map((items) => {
-                return (
-                  <>
-                    <iframe src={items.video} title="youtube" />
-                  </>
-                );
-              })
-            ) : (
-              <Loader />
-            )}
-          </div>
+          {videoData.slice(0, `${page}`).map((item) => {
+            return (
+              <>
+                { loading ? 
+                  <div className="video-card">
+                    <iframe
+                      src={item.video}
+                      title="youtube_video"
+                      style={{ width: "100%" }}
+                    />
+                  </div> : <Loading/>
+                }
+              </>
+            );
+          })}
         </div>
         <br></br>
       </div>
