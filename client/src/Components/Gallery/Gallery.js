@@ -3,15 +3,12 @@ import "./Gallery.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
-import Loading from "../Loading/Loading";
+import Loader from "../Loader/Loader";
 
 const Gallery = () => {
   const [galleryPhotos, setGalleryPhotos] = useState([]);
-  const [data, setData] = useState(galleryPhotos);
   const [loading, setLoading] = useState(false);
-  const [show, setShow] = useState(false);
   const [error, setError] = useState("");
-  const [page, setPage] = useState(3);
 
   const [model, setModel] = useState(false);
   const [temImg, setTemImg] = useState("");
@@ -23,9 +20,8 @@ const Gallery = () => {
 
   useEffect(() => {
     axios
-      // .get("http://localhost:4000/getImage")
       .get(
-        "https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,like,media_type&access_token=IGQWRQNGNkMFk3U3oyOVc5ZATVIUkF6WnVEYzdmUUp3YkZAqUU5uRjdKUUF2b0Y1Q2E0NlpFdzRLNTlSTGxRbENjaUNDaDBQUXpZAY1d3elNCc21MM0N5UllIRXQtZAE5sOEp4UWJJOGkyc3MyRC1ncjQ2cFhvdGVRUmMZD"
+        "https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,like,media_type&access_token=IGQWRNcWNmaDhOR3EyYU8wbUQycy1iVUszRHotTVVFaHNuWlEtVFlnUnVjejgwNEZA1RXNjY3pLNEJ6bDZA3NGRnOHlxNG5Gc0VnWlZALSkVIWDdDNnZANb3dHakl3TEh1Nm5TSjJyWFdUWi05NnZAYUGtCRi1IdFR5em8ZD"
       )
       .then((res) => {
         setLoading(true);
@@ -37,29 +33,29 @@ const Gallery = () => {
         console.log(err.message);
         setError(err.message);
       });
-    window.addEventListener("scroll" , handelInfiniteScrolls)
-    return() => window.removeEventListener("scroll" , handelInfiniteScrolls)
-    }, [page]);
-  // }, []);
+    // window.addEventListener("scroll" , handelInfiniteScrolls)
+    // return() => window.removeEventListener("scroll" , handelInfiniteScrolls)
+    // }, [page]);
+  }, []);
 
-  const handelInfiniteScrolls = () => {
-    try{
-      if(window.innerHeight + document.documentElement.scrollTop + 1 >=
-        document.documentElement.scrollHeight){
-            // setLoading(false)
-            setPage((prev) => prev + 3);
-        }
-    }catch(err){
-        console.log(err)
-    }
-  }
-
-  const filterItems = (items) => {
-    const updatedItem = galleryPhotos.filter((curElem) => {
-      return curElem.category === items;
-    });
-    setData(updatedItem);
-  };
+  // const handelInfiniteScrolls = () => {
+  //   try{
+  //     if(window.innerHeight + document.documentElement.scrollTop + 1 >=
+  //       document.documentElement.scrollHeight){
+  //           // setLoading(false)
+  //           setPage((prev) => prev + 1);
+  //       }
+  //   }catch(err){
+  //       console.log(err)
+  //   }
+  // }
+  // //
+  //   const filterItems = (items) => {
+  //     const updatedItem = galleryPhotos.filter((curElem) => {
+  //       return curElem.category === items;
+  //     });
+  //     setData(updatedItem);
+  //   };
 
   return (
     <>
@@ -125,29 +121,30 @@ const Gallery = () => {
               <img src={temImg} alt="NOopen" />
               <i class="fa-solid fa-xmark" onClick={() => setModel(false)}></i>
             </div>
-
-            <div className="gallery container">
-              {galleryPhotos.slice(0 , `${page}`).map((items) => {
-                return (
-                  <>
-                    {loading ? (
-                      <div
-                        className="pics container"
-                        onClick={() => getImg(items.media_url)}
-                      >
-                        <img
-                          src={items.media_url}
-                          alt="NotImageFound !!"
-                          style={{ width: "100%" }}
-                        />
-                      </div>
-                    ) : (
-                      <Loading />
-                    )}
-                  </>
-                );
-              })}
-            </div>
+            {loading ? (
+              <div className="gallery container">
+                {galleryPhotos.map((items) => {
+                  return (
+                    <>
+                      {loading ? (
+                        <div
+                          className="pics"
+                          onClick={() => getImg(items.media_url)}
+                        >
+                          <img
+                            src={items.media_url}
+                            alt="NotImageFound !!"
+                            style={{ width: "100%" }}
+                          />
+                        </div>
+                      ) : null}
+                    </>
+                  );
+                })}
+              </div>
+            ) : (
+              <Loader />
+            )}
           </>
         )}
         <br></br>

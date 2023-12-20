@@ -1,9 +1,7 @@
 .gallery-section {
   width: auto;
   height: auto;
-  /* background-color:#eae3e4; */
   background-color: white;
-  /* color: rgb(0, 0, 0); */
   color: #b55467;
   padding-top: 70px;
 }
@@ -12,24 +10,6 @@
   text-align: center;
   padding-bottom: 20px;
   font-family: "Dancing Script", cursive;
-}
-/* .image-section {
-  height: auto;
-  display: flex;
-  place-items: center;
-}
-
-.image-container {
-  width: 100vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: repeat(2, minmax(250px, 1fr));
-} */
-
-.gallery-img {
-  max-width: 100%;
-  min-height: 250px;
-  height: auto;
 }
 
 .gallery {
@@ -42,7 +22,6 @@
   transition: all 350ms ease;
   cursor: pointer;
   margin-bottom: 12px;
-  /* border-radius: 10px; */
 }
 
 .gallery .pics:hover {
@@ -56,6 +35,7 @@
 .search-btn {
   text-align: center;
 }
+
 .search-btn button {
   width: 16vh;
   height: 40px;
@@ -66,43 +46,13 @@
   border-radius: 10px;
   font-weight: bold;
 }
+
 .search-btn button:hover {
   border: 3px solid #b55467;
 }
 .search-btn button:focus {
   outline: none;
   box-shadow: none;
-}
-
-@media (max-width: 991px) {
-  .gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery {
-    column-count: 1;
-    column-width: 100%;
-  }
-}
-
-@media (max-width: 760px) {
-  .search-btn button {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 530px) {
-  .image-section img {
-    margin-top: 15px;
-  }
-}
-
-@media (max-width: 286px) {
-  .search-btn button {
-    margin-left: 2px;
-  }
 }
 
 .model {
@@ -114,7 +64,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: rgba(83, 83, 83, 0.949); */
   background-color: black;
   transition: opacity 0.4s ease, visibility 0.4s ease,
     transform 0.5s ease-in-out;
@@ -152,4 +101,36 @@
   box-sizing: border-box;
   padding: 20px;
   margin: 0 auto;
+}
+
+
+@media (max-width: 991px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    column-count: 1;
+    column-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .search-btn button {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .image-section img {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 286px) {
+  .search-btn button {
+    margin-left: 2px;
+  }
 }

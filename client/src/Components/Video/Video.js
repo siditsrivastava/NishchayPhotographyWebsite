@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import Loader from "../Loader/Loader";
-import Loading from "../Loading/Loading";
+// import Loading from "../Loading/Loading";
 
 const Video = () => {
   const [videoData, setVideoData] = useState([]);
@@ -13,7 +13,7 @@ const Video = () => {
 
   useEffect(() => {
     axios
-      .get("/videofetching")
+      .get("https://nishchayphotographyapi.onrender.com/videofetching")
       .then((res) => {
         setLoading(true);
         setVideoData(res.data);
@@ -49,23 +49,26 @@ const Video = () => {
           <h1>My Video.</h1>
           <hr style={{ backgroundColor: "#b55467" }}></hr>
         </div>
-        <div className="youtube-viedo-section container">
-          {videoData.slice(0, `${page}`).map((item) => {
-            return (
-              <>
-                { loading ? 
+        {loading ? (
+          <div className="youtube-viedo-section container">
+            {videoData.slice(0, `${page}`).map((item) => {
+              return (
+                <>
                   <div className="video-card">
                     <iframe
                       src={item.video}
                       title="youtube_video"
                       style={{ width: "100%" }}
                     />
-                  </div> : <Loading/>
-                }
-              </>
-            );
-          })}
-        </div>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        ) : (
+          <Loader />
+        )}
+
         <br></br>
       </div>
       <Footer />

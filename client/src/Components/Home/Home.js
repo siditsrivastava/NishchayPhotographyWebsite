@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Home.css";
 import Header from "../Header/Header";
 import Footer from '../Footer/Footer';
-import Loading from "../Loading/Loading";
 
 const Home = () => {
-  const [loading , setLoading] = useState(false)
+  // const [loading , setLoading] = useState(false)
 
-  useEffect(() => {
-   setLoading(true);
-  }, [])
+  // useEffect(() => {
+  //  setLoading(true);
+  // }, [])
   
 
   return (
