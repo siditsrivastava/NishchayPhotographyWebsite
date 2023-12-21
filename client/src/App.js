@@ -8,8 +8,8 @@ import Contactus from './Components/ContactUs/Contactus';
 import UploadImage from './Components/admin/UploadImage';
 import Uploadfaq from './Components/admin/Uploadfaq';
 import UploadVideo from './Components/admin/UploadVideo';
-import Prewedding from './Components/Prewedding/Prewedding';
-import UploadPreweddingImg from './Components/admin/UploadPreweddingImg';
+// import Prewedding from './Components/Prewedding/Prewedding';
+// import UploadPreweddingImg from './Components/admin/UploadPreweddingImg';
 // import FullPic from './Components/Gallery/FullPic'
 import { useEffect , useState} from 'react';
 import Loading from './Components/Loading/Loading';

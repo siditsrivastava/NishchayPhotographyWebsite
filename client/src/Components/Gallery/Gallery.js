@@ -21,7 +21,7 @@ const Gallery = () => {
   useEffect(() => {
     axios
       .get(
-        "https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,like,media_type&access_token=IGQWRNZAFM1VE52bm9OM2VTenFsNnRJRURzVjJaU3RUX0MwdmRVOEVRa1ZAmc256THRMdXoxS05fX0QxcDdCSnBwekt4WkN4bWRJZAEJHcVpiclYteTNjdGt0ZAnlST1FoOHZANQ2c1eWplU3hUczRPUXBUX2wtdDhJRFEZD"
+        "https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,like,media_type&access_token=IGQWRQcktUMWp4azBsTi03QzlMQXRuWHZAIT1RxNEdfVF9Bbk9ZAbERnMEpxWWNZAOUQyRWVwLVprM0FtNXVUcHllcjdTRGFEN2hIMVFpNUFpWXFsTzJ4QjNGR3htSGNoUkhkellndnB0OVZAoOFlXbkVfcTRyTFZAXQXMZD"
       )
       .then((res) => {
         setLoading(true);
