@@ -51,7 +51,7 @@ const Video = () => {
         </div>
         {loading ? (
           <div className="youtube-viedo-section container">
-            {videoData.slice(0, `${page}`).map((item) => {
+            {videoData.map((item) => {
               return (
                 <>
                   <div className="video-card">

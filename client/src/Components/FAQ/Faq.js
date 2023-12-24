@@ -11,7 +11,6 @@ const Faq = () => {
   const [loading , setLoading] = useState(false)
 
   useEffect(() => {
-    
     axios.get("https://nishchayphotographyapi.onrender.com/faqquestion")
     .then((res) => {
       setFetchFaqdata(res.data);

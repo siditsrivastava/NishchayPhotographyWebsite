@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
-import React, { useState , useEffect} from "react";
+import React, { useState } from "react";
 import "./Contactus.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import TextField from "@mui/material/TextField";
 import { Alert, AlertTitle } from "@mui/material";
-// import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 
@@ -15,7 +14,7 @@ const Contactus = () => {
     usergroomname: "",
     usernumber: "",
     useremail: "",
-    userweddingdate : "",
+    userweddingdate: "",
     userweddingdetails: "",
   });
 
@@ -32,70 +31,68 @@ const Contactus = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-   try {
-    const { 
-      useremail, 
-      usergroomname, 
-      userbridename, 
-      usernumber, 
-      userweddingdate,
-      userweddingdetails 
-
-    } 
-      = userdata;
-    if (
-      !userbridename || 
-      !usergroomname ||
-      !useremail ||
-      !usernumber ||
-      !userweddingdate ||
-      !userweddingdetails
-    ) {
-      setError(true);
-      setTimeout(() => {
-        setError(false);
-      }, 3000);
-    } 
-    else {
-      console.log(userdata);
-      const res = await fetch("https://nishchayphotographyapi.onrender.com/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type" : "application/json",
-        },
-        body: JSON.stringify({
-          userbridename,
-          usergroomname,
-          useremail,
-          usernumber,
-          userweddingdate,
-          userweddingdetails,
-          
-        }),
-      });
-      const contactData = await res.json();
-      if (!contactData) {
-        alert("Invalid data");
-      }
-       else {
-        setSuccessfullySubmit(true);
+    try {
+      const {
+        useremail,
+        usergroomname,
+        userbridename,
+        usernumber,
+        userweddingdate,
+        userweddingdetails,
+      } = userdata;
+      if (
+        !userbridename ||
+        !usergroomname ||
+        !useremail ||
+        !usernumber ||
+        !userweddingdate ||
+        !userweddingdetails
+      ) {
+        setError(true);
         setTimeout(() => {
-          setSuccessfullySubmit(false);
+          setError(false);
         }, 3000);
-        setUserdata({
-          userbridename: "",
-          usergroomname: "",
-          useremail: "",
-          usernumber: "",
-          userweddingdate:"",
-          userweddingdetails: "",
-      });
-      setshow(false);
-      } 
-    }
-   }catch(err) {
+      } else {
+        console.log(userdata);
+        const res = await fetch(
+          "https://nishchayphotographyapi.onrender.com/contact",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              userbridename,
+              usergroomname,
+              useremail,
+              usernumber,
+              userweddingdate,
+              userweddingdetails,
+            }),
+          }
+        );
+        const contactData = await res.json();
+        if (!contactData) {
+          alert("Invalid data");
+        } else {
+          setSuccessfullySubmit(true);
+          setTimeout(() => {
+            setSuccessfullySubmit(false);
+          }, 3000);
+          setUserdata({
+            userbridename: "",
+            usergroomname: "",
+            useremail: "",
+            usernumber: "",
+            userweddingdate: "",
+            userweddingdetails: "",
+          });
+          setshow(false);
+        }
+      }
+    } catch (err) {
       console.log(err);
-   }
+    }
   };
   const onReset = (e) => {
     e.preventDefault();
@@ -107,21 +104,20 @@ const Contactus = () => {
       userweddingdate: "",
       userweddingdetails: "",
     });
-      setSuccessfullyReset(true);
+    setSuccessfullyReset(true);
     setTimeout(() => {
-      setSuccessfullyReset(false)
+      setSuccessfullyReset(false);
     }, 1000);
-    
   };
 
   return (
     <>
       <Header />
-      <div className="contact-section" >
+      <div className="contact-section">
         <div className="contact-title-section container">
           <hr></hr>
           <h1>Contact Us.</h1>
-          <hr style={{backgroundColor:"#b55467"}}></hr>
+          <hr style={{ backgroundColor: "#b55467" }}></hr>
         </div>
         <br></br>
         <div className="error-handler">
@@ -130,7 +126,10 @@ const Contactus = () => {
           {error ? (
             <Alert severity="error" variant="filled">
               <AlertTitle>Error</AlertTitle>
-              This is a Error alert — <strong>Please check it out Again ! You are Missing Something....</strong>
+              This is a Error alert —{" "}
+              <strong>
+                Please check it out Again ! You are Missing Something....
+              </strong>
             </Alert>
           ) : null}
           {successfullySubmit ? (
@@ -146,110 +145,109 @@ const Contactus = () => {
             </Alert>
           ) : null}
         </div>
-        <div className="form-section container" >
+        <div className="form-section container">
           <div className="form-contents">
             <form className="form" method="POST">
-              <div className="contact-form" >
+              <div className="contact-form">
                 <div className="data-form" onClick={() => setshow(true)}>
-                <TextField
-                  id="bridename"
-                  label=" BRIDE'S NAME "
-                  variant="standard"
-                  fullWidth
-                  className="name-input"
-                  required
-                  name="userbridename"
-                  type="bridename"
-                  value={userdata.userbridename}
-                  onChange={handlerInputs}
-                  autoComplete="off"
-                  InputLabelProps={{className:"nameinput"}}
-                />
-              </div>
-              <div className="data-form" onClick={() => setshow(true)}>
-                <TextField
-                  id="groomname"
-                  fullWidth
-                  label=" GROOM'S NAME "
-                  variant="standard"
-                  className="name-input"
-                  required
-                  name="usergroomname"
-                  type="groomname"
-                  value={userdata.usergroomname}
-                  onChange={handlerInputs}
-                  autoComplete="off"
-                  InputLabelProps={{className:"nameinput"}}
-                />
-              </div>
-              <div className="data-form" onClick={() => setshow(true)}>
-                <TextField
-                  id="email"
-                  fullWidth
-                  label="EMAIL "
-                  variant="standard"
-                  className="name-input"
-                  required
-                  name="useremail"
-                  type="email"
-                  value={userdata.useremail}
-                  onChange={handlerInputs}
-                  autoComplete="off"
-                  InputLabelProps={{className:"nameinput"}}
-                />
-              </div>
-              <div className="data-form" onClick={() => setshow(true)}>
-                <TextField
-                  id="number"
-                  fullWidth
-                  label="NUMBER "
-                  type="number"
-                  variant="standard"
-                  className="name-input"
-                  required
-                  name="usernumber"
-                  value={userdata.usernumber}
-                  onChange={handlerInputs}
-                  autoComplete="off"
-                  InputLabelProps={{className:"nameinput"}}
-                />
-              </div>
-              <div className="data-form">
-                <TextField
-                  id="weddingdate"
-                  fullWidth
-                  type={  show ? "" : "date"}
-                  label="YOUR WEDDING  DATE "
-                  variant="standard"
-                  className="name-input"
-                  placeholder=""
-                  required
-                  name="userweddingdate"
-                  value={userdata.userweddingdate}
-                  onChange={handlerInputs}
-                  onClick={() => setshow(false)}
-                  autoComplete="off"
-                  InputLabelProps={{className:"nameinput"}}
-                />
-              </div>
-              <div className="data-form"  onClick={() => setshow(true)}  >
-                <TextField
-                  id="weddingdetails"
-                  fullWidth
-                  label="Your Wedding details "
-                  variant="standard"
-                  className="name-input"
-                  type="text"
-                  required
-                  name="userweddingdetails"
-                  value={userdata.userweddingdetails}
-                  onChange={handlerInputs}
-                  autoComplete="off"
-                  
-                  InputLabelProps={{className:"nameinput"}}
-                />
-              </div>
-              <br></br>
+                  <TextField
+                    id="bridename"
+                    label=" BRIDE'S NAME "
+                    variant="standard"
+                    fullWidth
+                    className="name-input"
+                    required
+                    name="userbridename"
+                    type="bridename"
+                    value={userdata.userbridename}
+                    onChange={handlerInputs}
+                    autoComplete="off"
+                    InputLabelProps={{ className: "nameinput" }}
+                  />
+                </div>
+                <div className="data-form" onClick={() => setshow(true)}>
+                  <TextField
+                    id="groomname"
+                    fullWidth
+                    label=" GROOM'S NAME "
+                    variant="standard"
+                    className="name-input"
+                    required
+                    name="usergroomname"
+                    type="groomname"
+                    value={userdata.usergroomname}
+                    onChange={handlerInputs}
+                    autoComplete="off"
+                    InputLabelProps={{ className: "nameinput" }}
+                  />
+                </div>
+                <div className="data-form" onClick={() => setshow(true)}>
+                  <TextField
+                    id="email"
+                    fullWidth
+                    label="EMAIL "
+                    variant="standard"
+                    className="name-input"
+                    required
+                    name="useremail"
+                    type="email"
+                    value={userdata.useremail}
+                    onChange={handlerInputs}
+                    autoComplete="off"
+                    InputLabelProps={{ className: "nameinput" }}
+                  />
+                </div>
+                <div className="data-form" onClick={() => setshow(true)}>
+                  <TextField
+                    id="number"
+                    fullWidth
+                    label="NUMBER "
+                    type="number"
+                    variant="standard"
+                    className="name-input"
+                    required
+                    name="usernumber"
+                    value={userdata.usernumber}
+                    onChange={handlerInputs}
+                    autoComplete="off"
+                    InputLabelProps={{ className: "nameinput" }}
+                  />
+                </div>
+                <div className="data-form">
+                  <TextField
+                    id="weddingdate"
+                    fullWidth
+                    type={show ? "" : "date"}
+                    label="YOUR WEDDING  DATE "
+                    variant="standard"
+                    className="name-input"
+                    placeholder=""
+                    required
+                    name="userweddingdate"
+                    value={userdata.userweddingdate}
+                    onChange={handlerInputs}
+                    onClick={() => setshow(false)}
+                    autoComplete="off"
+                    InputLabelProps={{ className: "nameinput" }}
+                  />
+                </div>
+                <div className="data-form" onClick={() => setshow(true)}>
+                  <TextField
+                    id="weddingdetails"
+                    fullWidth
+                    label="Your Wedding details "
+                    variant="standard"
+                    className="name-input"
+                    type="text"
+                    required
+                    name="userweddingdetails"
+                    value={userdata.userweddingdetails}
+                    onChange={handlerInputs}
+                    autoComplete="off"
+                    InputLabelProps={{ className: "nameinput" }}
+                  />
+                </div>
+                <br></br>
               </div>
               <div className="contact-form-btn">
                 <button className="submit-btn btn" onClick={onSubmit}>

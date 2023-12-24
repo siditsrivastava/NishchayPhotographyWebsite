@@ -9,7 +9,8 @@ const Gallery = () => {
   const [galleryPhotos, setGalleryPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  const [data, setData] = useState();
+  const [show, setShow] = useState(false);
   const [model, setModel] = useState(false);
   const [temImg, setTemImg] = useState("");
 
@@ -20,17 +21,20 @@ const Gallery = () => {
 
   useEffect(() => {
     axios
+      // .get(
+      //   "https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,like,media_type&expires_in:5183944&client_secret=95fb657c7fdf472fcb6eaad689799db7&access_token=IGQWRQbHBXX3JPd2F2bFFxX0dWVnBhM2FsTEpWVm9xT0p3MnR3Vl9zcm1obzM5ZAUpEeDNUY3NvdklPalV4XzdVdGxQaTFmVmNSUDF5TzRHV3JZAdHV2OHBxM1A0NXFVS1pDWkpyRUNaUG52aGFyNTgtRlV1a0x5RzQZD"
+      // )
       .get(
-        "https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,like,media_type&access_token=IGQWRQcktUMWp4azBsTi03QzlMQXRuWHZAIT1RxNEdfVF9Bbk9ZAbERnMEpxWWNZAOUQyRWVwLVprM0FtNXVUcHllcjdTRGFEN2hIMVFpNUFpWXFsTzJ4QjNGR3htSGNoUkhkellndnB0OVZAoOFlXbkVfcTRyTFZAXQXMZD"
+        "https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,like,media_type&expires_in:5183944&client_secret=8f6afa96e1ddbbd6c39036ae8af30d69&access_token=IGQWROaW00Qmh3WnpkNVVtSHZAPS3ZA6aFEtZAjItb3l4MzZAqbXVmODZAWUkZAqSjVuRTV1aXpuNkNhNnVnOGJQTU8yTWI1QkpvN3lXNWhabWhMOXRGQklsZAVByblRiOTlZAaEdwc3AzeVo2eEh5Tk5GeWtfWlQza1pYbFkZD"
       )
       .then((res) => {
         setLoading(true);
         const mediaData = res.data;
         setGalleryPhotos(mediaData.data);
-        console.log(mediaData);
+        // console.log(mediaData);
       })
       .catch((err) => {
-        console.log(err.message);
+        // console.log(err.message);
         setError(err.message);
       });
     // window.addEventListener("scroll" , handelInfiniteScrolls)
@@ -50,12 +54,13 @@ const Gallery = () => {
   //   }
   // }
   // //
-  //   const filterItems = (items) => {
-  //     const updatedItem = galleryPhotos.filter((curElem) => {
-  //       return curElem.category === items;
-  //     });
-  //     setData(updatedItem);
-  //   };
+  const filterItems = (items) => {
+    const updatedItem = galleryPhotos.filter((curElem) => {
+      return curElem.media_type === items;
+    });
+    setData(updatedItem);
+    console.log(updatedItem);
+  };
 
   return (
     <>
@@ -73,74 +78,89 @@ const Gallery = () => {
           </h4>
         ) : (
           <>
-            {/* <div className="search-btn">
+            <div className="search-btn">
               <button className="btn" onClick={() => setData(galleryPhotos)}>
-                All
+                ALL
               </button>
               <button
                 className="btn"
-                onClick={() => [filterItems("haldi"), setShow(true)]}
+                onClick={() => [filterItems("VIDEO"), setShow(true)]}
               >
-                Haldi
+                VIDEO
               </button>
               <button
                 className="btn"
-                onClick={() => [filterItems("sangeet"), setShow(true)]}
+                onClick={() => [filterItems("IMAGE"), setShow(true)]}
               >
-                Sangeet
+                PHOTO
               </button>
-              <button
-                className="btn"
-                onClick={() => [filterItems("engagement"), setShow(true)]}
-              >
-                Engagement
-              </button>
-              <button
-                className="btn"
-                onClick={() => [filterItems("wedding"), setShow(true)]}
-              >
-                Wedding
-              </button>
-            </div> */}
+            </div>
             <br></br>
-            {/* {  { loading ?  show ? data.slice(0 , `${page}`).map((items) => {
-              return (
-                <>
-                  <img src={`/${items.image}`} className="gallery-img" alt="NotImageFound !!" />
-                </>
-             );
-             }) : galleryPhotos.slice(0 , `${page}`).map((items) => {
-              return (
-                <>
-                  <img src={`/${items.image}`} className="gallery-img" alt="NotImageFound !!" />
-                </>
-             );
-             }) : <Loading/>  }} */}
-
             <div className={model ? "model open" : "model"}>
               <img src={temImg} alt="NOopen" />
               <i class="fa-solid fa-xmark" onClick={() => setModel(false)}></i>
             </div>
             {loading ? (
               <div className="gallery container">
-                {galleryPhotos.map((items) => {
-                  return (
-                    <>
-                      {loading ? (
-                        <div
-                          className="pics"
-                          onClick={() => getImg(items.media_url)}
-                        >
-                          <img
-                            src={items.media_url}
-                            alt="NotImageFound !!"
-                            style={{ width: "100%" }}
-                          />
-                        </div>
-                      ) : null}
-                    </>
-                  );
-                })}
+                {show
+                  ? data.map((items) => {
+                      return (
+                        <>
+                          {loading ? (
+                            items.media_type === "IMAGE" ? (
+                              <div
+                                className="pics"
+                                onClick={() => getImg(items.media_url)} key={items.id}
+                              >
+                                <img
+                                  src={items.media_url}
+                                  alt="NotImageFound !!"
+                                  style={{ width: "100%" }}
+                                />
+                              </div>
+                            ) : (
+                              <div className="pics" key={items.id}>
+                              <video
+                                controls
+                                style={{ width: "100%", height: "100%" }}
+                                src={items.media_url}
+                              />
+                              </div>
+                              
+                            )
+                          ) : null}
+                        </>
+                      );
+                    })
+                  : galleryPhotos.map((items) => {
+                      return (
+                        <>
+                          {loading ? (
+                            items.media_type === "IMAGE" ? (
+                              <div
+                                className="pics"
+                                onClick={() => getImg(items.media_url)} key={items.id}
+                              >
+                                <img
+                                  src={items.media_url}
+                                  alt="NotImageFound !!"
+                                  style={{ width: "100%" }}
+                                />
+                              </div>
+                            ) : (
+                              <div className="pics" key={items.id} >
+                              <video
+                                controls
+                                style={{ width: "100%", height: "100%" }}
+                                src={items.media_url}
+                              />
+                              </div>
+                              
+                            )
+                          ) : null}
+                        </>
+                      );
+                    })}
               </div>
             ) : (
               <Loader />

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Header from "../Header/Header";
-import Footer from '../Footer/Footer';
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   // const [loading , setLoading] = useState(false)
@@ -9,7 +9,6 @@ const Home = () => {
   // useEffect(() => {
   //  setLoading(true);
   // }, [])
-  
 
   return (
     <>
@@ -94,10 +93,9 @@ const Home = () => {
 
         <hr></hr>
         <br></br>
-       
-      </div>   
-      <Footer/>
-          </>
+      </div>
+      <Footer />
+    </>
   );
 };
 

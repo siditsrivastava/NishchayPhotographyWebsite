@@ -45,7 +45,7 @@ const Header = () => {
               href="#"
               onClick={() => setShowbar(!showbar)}
             >
-              <i class="fa-solid fa-bars"></i>
+              <i className="fa-solid fa-bars"></i>
             </button>
           </div>
         </div>
