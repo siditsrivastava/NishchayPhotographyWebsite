@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import FaqcardItems from "./FaqcardItems";
 import Footer from "../Footer/Footer";
 import axios from 'axios';
+import Loader from '../Loader/Loader'
 
 const Faq = () => {
 
@@ -38,7 +39,7 @@ const Faq = () => {
             return (
               <FaqcardItems items={items} key ={items.id}/>
             );
-          }) : "Loading ... Please Wait !!! "}
+          }) : <Loader/>}
         </div>
       </div>
       <Footer/>

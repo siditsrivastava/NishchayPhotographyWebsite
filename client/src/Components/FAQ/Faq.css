@@ -1,8 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 
 .faq-section{
     width:auto;
     height: auto;
-    /* background-color:#eae3e4; */
     background-color: white;
     color: #b55467;
 }
@@ -10,18 +16,20 @@
 .faq-title-section {
     text-align: center;
     font-family: "Dancing Script", cursive;    
-    padding-top: 20px;
-    padding-top: 70px;
+    padding-top: 1.25rem;
+    padding-top: 4.375rem;
     color: #b55467;
 }
 
   .faq-title-section h1{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
     color: #b55467;
 }
 
   .question-btn-portion{ 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
 }
 
@@ -33,8 +41,8 @@
 }
 
 .plus-button{
-    width: 40px;
-    height:40px;
+    width: 2.5rem;
+    height:2.5rem;
     /* margin-top: 10px; */
     color: #b55467;
     border-radius: 50%;
@@ -42,20 +50,20 @@
 }
 
 .plus-button:hover{
-    border: 2px solid #b55467;
+    border: 0.125rem solid #b55467;
 }
 
 .plus-sign{
-    font-size: 15px;
+    font-size: 0.938rem;
 }
 
 .question{
-    margin-left: 10px;
-    margin-top: 5px;
+    margin-left:0.625rem;
+    margin-top:0.313rem;
 }
 
 .answer-section {
-    margin-left: 50px;
+    margin-left: 3.125rem;
     color: #b55467;
     text-transform:capitalize;
     font-family: "Dancing Script", cursive;

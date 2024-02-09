@@ -20,6 +20,7 @@ const Contactus = () => {
 
   const [error, setError] = useState("");
   const [show, setshow] = useState(true);
+  const [pleaseWait , setPleaseWait] = useState(false);
   const [successfullySubmit, setSuccessfullySubmit] = useState(false);
   const [successfullyReset, setSuccessfullyReset] = useState(false);
   let value, name;
@@ -54,6 +55,7 @@ const Contactus = () => {
         }, 3000);
       } else {
         console.log(userdata);
+        
         const res = await fetch(
           "https://nishchayphotographyapi.onrender.com/contact",
           {
@@ -96,6 +98,7 @@ const Contactus = () => {
   };
   const onReset = (e) => {
     e.preventDefault();
+    
     setUserdata({
       userbridename: "",
       usergroomname: "",
@@ -105,7 +108,9 @@ const Contactus = () => {
       userweddingdetails: "",
     });
     setSuccessfullyReset(true);
+    setPleaseWait(true)
     setTimeout(() => {
+      setPleaseWait(false);
       setSuccessfullyReset(false);
     }, 1000);
   };
@@ -249,7 +254,10 @@ const Contactus = () => {
                 </div>
                 <br></br>
               </div>
-              <div className="contact-form-btn">
+             <p className="pleasewait"> {
+                pleaseWait ?  "Please Wait Massage is Sending !!! " : ""
+              }</p> 
+              <div className="contact-form-btn"> 
                 <button className="submit-btn btn" onClick={onSubmit}>
                   Submit
                 </button>

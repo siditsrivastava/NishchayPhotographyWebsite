@@ -4,12 +4,6 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const Home = () => {
-  // const [loading , setLoading] = useState(false)
-
-  // useEffect(() => {
-  //  setLoading(true);
-  // }, [])
-
   return (
     <>
       <Header />
@@ -33,14 +27,14 @@ const Home = () => {
               <p> The Wedding Story world!</p>
             </div>
           </div>
+          <br></br>
         </div>
       </div>
       <div className="second-home-section container-fluid">
         <p>
-          " Without stories of love, our lives would pass by in the blink of an
-          eye.
+          " Love stories, fleeting yet timeless, weave the fabric of our lives. 
         </p>
-        <p>These stories have the power to stop the world for a moment "</p>
+        <p>In their embrace, time pauses, offering a glimpse of eternity in moments that redefine our existence. "</p>
         <h6>- Nishchay Srivastava -</h6>
       </div>
       <div className="third-home-section container-fluid">

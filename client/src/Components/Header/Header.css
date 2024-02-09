@@ -1,7 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 li {
@@ -10,42 +18,60 @@ li {
 
 .main-nav {
   width: 100%;
-  height: 90px;
+  height: 5.25rem;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 60px 1fr 2fr 1fr 60px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  -ms-grid-columns: 3.75rem 1fr 2fr 1fr 3.65rem;
+  grid-template-columns: 3.75rem 1fr 2fr 1fr 3.65rem;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 3.125rem 6.25rem -1.25rem,
+    rgba(0, 0, 0, 0.3) 0px 1.875rem 3.75rem -1.875rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 3.125rem 6.25rem -1.25rem,
+    rgba(0, 0, 0, 0.3) 0px 1.875rem 3.75rem -1.875rem;
   position: fixed;
   background-color: #b55467;
-  /* background-color: #beadfad1; */
   z-index: 99;
 }
 
 .logo {
-  width: 200px;
-  height: 90px;
+  width: 12.5rem;
+  height: 5.25rem;
+  display: -ms-grid;
   display: grid;
-  margin-left: 20px;
+  margin-left: 1.25rem;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
   grid-column: 2/3;
-  justify-content: start;
-  align-items: center;
-  object-fit: cover;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
   mix-blend-mode: color-dodge;
 }
 
 .menu-link {
+  -ms-grid-column: 4;
   grid-column: 4/4;
 }
 .menu-link ul {
-  height: 60px;
-  margin-top: 10px;
+  height: 3.75rem;
+  margin-top: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .menu-link ul li {
-  padding-left: 50px;
+  padding-left: 3.125rem;
   color: red !important;
 }
 
@@ -54,18 +80,25 @@ li {
 }
 
 .social-media {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
   grid-column: 4/5;
   color: white;
 }
 
 .social-media ul {
-  height: 60px;
+  height: 3.75rem;
+  display: -ms-grid;
   display: grid;
+  /* -ms-grid-columns: 3fr (1fr)[3];
   grid-template-columns: 3fr repeat(3, 1fr);
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
-
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; */
 }
 
 .social-media ul li {
@@ -74,6 +107,8 @@ li {
 }
 
 .social-media ul li:first-child {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
   grid-column: 2/3;
 }
 
@@ -89,22 +124,28 @@ li {
 }
 
 .logo h2 span {
-  font-size: 50px;
+  font-size: 3.125rem;
 }
 
 .menu-link ul li {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .menu-link ul li a {
   text-transform: capitalize;
   color: rgba(0, 0, 3, 0.8);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
 }
 .menu-link ul li:hover > a {
-  transform-origin: left;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
   color: rgba(0, 0, 3, 1);
   text-decoration: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -116,7 +157,8 @@ li {
 @media (max-width: 1080px) {
   .main-nav {
     /* height: 90px; */
-    grid-template-columns: 32px 3fr 3fr 1fr 32px;
+    -ms-grid-columns: 2rem 3fr 3fr 1fr 2rem;
+    grid-template-columns: 2rem 3fr 3fr 1fr 2rem;
   }
 
   .logo,
@@ -128,35 +170,36 @@ li {
 /* responsive css style  */
 @media (max-width: 609px) {
   .logo {
-    width: 180px;
-    margin-left: 10px;
+    width: 11.25rem;
+    margin-left: 0.625;
   }
 }
 
 @media (max-width: 450px) {
   .logo {
-    width: 160px;
-    margin-left: 5px;
+    width: 10rem;
+    margin-left: 0.313rem;
   }
 }
 
 @media (max-width: 286px) {
   .logo {
-    width: 100px;
+    width: 6.25rem;
     margin-left: 0;
   }
   .mobile-menu-link {
-    height: 230px;
+    height: 14.375rem;
   }
   .main-nav {
-    height: 30px;
+    height: 1.875rem;
   }
 }
 
 @media (max-width: 998px) {
   .main-nav {
-    height: 112px;
-    grid-template-columns: 32px 2fr 3fr 32px 32px;
+    height: 7rem;
+    -ms-grid-columns: 2rem 2fr 3fr 2rem 2rem;
+    grid-template-columns: 2rem 2fr 3fr 2rem 2rem;
   }
 
   .menu-link {
@@ -165,109 +208,149 @@ li {
 
   .logo,
   .social-media ul {
-    height: 112px;
+    height: 7rem;
   }
   .mobile-menu-link {
     background-color: #b55467;
-    height: 320px;
+    height: 20rem;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
     grid-column: 2/5;
-    align-items: center;
-    padding-left: 10px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 0.625rem;
+    -webkit-transition: all 2s linear;
+    -o-transition: all 2s linear;
     transition: all 2s linear;
-    transform-origin: top;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+            transform-origin: top;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 3.125rem 6.25rem -1.25rem,
+      rgba(0, 0, 0, 0.3) 0px 3.125rem 3.75rem -1.875rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 3.125rem 6.25rem -1.25rem,
+      rgba(0, 0, 0, 0.3) 0px 3.125rem 3.75rem -1.875rem;
     margin-top: 5px;
   }
 
   .mobile-menu-link ul {
-    height: 320px;
+    height: 20rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: start;
-    padding-bottom: 20px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding-bottom: 1.25rem;
   }
 
   .mobile-menu-link ul li:first-child {
-    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+         -o-transition-delay: 0.2s;
+            transition-delay: 0.2s;
   }
 
   .mobile-menu-link:focus {
     outline: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 
   .social-media {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1/2;
-    /* grid-column: 3/5; */
     justify-items: start;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all 2s linear;
+    -o-transition: all 2s linear;
     transition: all 2s linear;
   }
 
   .social-media .hamburger-menu {
     display: block;
-    margin-top: 25px;
-    font-size: 40px;
+    margin-top: 1.56rem;
+    font-size: 2.5rem;
   }
 
   .social-media .hamburger-menu :focus {
     outline: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
 @media (max-width: 798px) {
   .main-nav {
     /* height: 96px; */
-    grid-template-columns: 16px 2fr 1fr 1fr 16px;
+    -ms-grid-columns: 1rem 2fr 1fr 1fr 1rem;
+    grid-template-columns: 1rem 2fr 1fr 1fr 1rem;
   }
 
   .logo,
   .social-media ul {
-    height: 96px;
+    height: 7rem;
   }
 
   .social-media {
-    height: 96px;
+    height: 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-self: end;
-    align-items: center;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .social-media .hamburger-menu {
     display: block;
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 520px) {
   .main-nav {
-    height: 96px;
+    height: 6rem;
+    -ms-grid-columns: 1rem 4fr 1fr 1fr 1rem;
     grid-template-columns: 1rem 4fr 1fr 1fr 1rem;
   }
 
   .logo,
   .social-media ul {
-    height: 96px;
+    height: 6rem;
   }
 
   .logo h2 {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .social-media {
-    height: 96px;
+    height: 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-self: end;
-    align-items: center;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .social-media .hamburger-menu {
     display: block;
     margin-top: 0;
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 }
