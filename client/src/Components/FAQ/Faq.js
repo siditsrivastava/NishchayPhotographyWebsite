@@ -13,7 +13,7 @@ const Faq = () => {
 
   useEffect(() => {
     // axios.get("https://nishchayphotographyapi.onrender.com/faqquestion")
-    axios.get("https://newone-pearl-phi.vercel.app/faqquestion")
+    axios.get("https://nishchayphotographyapi.onrender.com/faqquestion")
     .then((res) => {
       setFetchFaqdata(res.data);
       console.log(res.data);
