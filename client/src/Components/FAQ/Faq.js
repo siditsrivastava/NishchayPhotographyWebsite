@@ -12,7 +12,8 @@ const Faq = () => {
   const [loading , setLoading] = useState(false)
 
   useEffect(() => {
-    axios.get("https://nishchayphotographyapi.onrender.com/faqquestion")
+    // axios.get("https://nishchayphotographyapi.onrender.com/faqquestion")
+    axios.get("https://newone-pearl-phi.vercel.app/faqquestion")
     .then((res) => {
       setFetchFaqdata(res.data);
       console.log(res.data);
