@@ -21,19 +21,19 @@ const Gallery = () => {
     setModel(true);
   };
 
-  const  pic = [
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
-    {media_url : "../image/firstImg.jpeg"},
+  // const  pic = [
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
+  //   {media_url : "../image/firstImg.jpeg"},
 
 
-  ]
+  // ]
 
   useEffect(() => {
     axios
@@ -84,7 +84,7 @@ const Gallery = () => {
       <div className="gallery-section">
         <div className="Gallery-image-section container">
           <hr></hr>
-          <h1>Gallery.</h1>
+          <h1>IMAGE.</h1>
           <hr style={{ backgroundColor: "#b55467" }}></hr>
         </div>
         <br></br>
@@ -144,37 +144,8 @@ const Gallery = () => {
                                 />
                               </div>
                             )
-                          ) : pic.map((items) => {
-                            return (
-                              <>
-                              (
-                            items.media_type === "IMAGE" ? (
-                              <div
-                                className="pics"
-                                onClick={() => getImg(items.media_url)}
-                                key={items.id}
-                              >
-                                <img
-                                  src={items.media_url}
-                                  alt="NotImageFound !!"
-                                  style={{ width: "100%" }}
-                                />
-                              </div>
-                            ) : (
-                              <div className="pics" key={items.id}>
-                                <video
-                                  controls
-                                  style={{ width: "100%", height: "100%" }}
-                                  src={items.media_url}
-                                />
-                              </div>
-                            )
-                          )
-
-                              </>
-
-                            )
-                          })}
+                          ) : null
+                          }
                         </>
                       );
                     })
