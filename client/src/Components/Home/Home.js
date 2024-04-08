@@ -106,6 +106,7 @@ const Home = () => {
       <h1 className="testimonial text-[3rem] mt-[3rem]">TESTIMONIAL</h1>
       <Testimonial />
       <Footer />
+      
     </>
   );
 };
