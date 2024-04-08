@@ -1,0 +1,52 @@
+.video-section {
+  width: auto;
+  height: auto;
+  /* background-color: #eae3e4; */
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding-top: 70px;
+}
+
+.video-title-section {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+}
+
+.video-title-section h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.youtube-viedo-section {
+  column-count: 2;
+  column-width: 50%;
+  padding: 0 12px;
+  /* align-items: center;
+  text-align:center;
+  /* width:35rem; */
+  /* height: 20rem; */
+  padding-left: 0.5rem;
+  border: none;
+  object-fit: cover;
+}
+
+.youtube-viedo-section iframe {
+  width: 35rem;
+  height: 20rem;
+  object-fit: cover;
+}
+
+/* .youtube-viedo-section iframe{ */
+/* margin-left: 50px; */
+/* margin-top: 30px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+} */
+
+@media (max-width: 1011px) {
+  .youtube-viedo-section {
+    column-count: 1;
+    column-width: 100%;
+  }
+}
