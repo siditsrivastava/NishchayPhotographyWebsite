@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./Video.css";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
+import "./Video.css";
 // import Loading from "../Loading/Loading";
 
 const Video = () => {
@@ -50,11 +50,11 @@ const Video = () => {
           <hr style={{ backgroundColor: "#b55467" }}></hr>
         </div>
         {loading ? (
-          <div className="youtube-viedo-section container">
+          <div className="youtube-viedo-section container p-5 ">
             {videoData.map((item) => {
               return (
                 <>
-                  <div className="video-card">
+                  <div className="video-card p-3">
                     <iframe
                       src={item.video}
                       title="youtube_video"

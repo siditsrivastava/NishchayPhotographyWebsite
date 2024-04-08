@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Abril+Fatface&family=Dancing+Script:wght@400..700&family=Lobster&family=Noto+Sans+Tifinagh&family=Protest+Revolution&family=Rubik+Burned&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 .footer-section{
     width: auto;
     height: auto;
     background-color: #b55467;
     padding-top: 50px;
     color: white;
-    
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .socialmedia-links{
@@ -12,7 +16,7 @@
     align-items: center;
     display: flex;
     font-size: 25px;
-    color :white;
+    color: white;
 }
 
 .socialmedia-links i{
@@ -23,5 +27,14 @@
 .copy-right{
     padding-top: 25px;
     text-align: center;
-    font-family: "Dancing Script", cursive;
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Applying font to client name as well */
+.copy-right .client-name {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-style: normal;
 }

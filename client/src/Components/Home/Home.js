@@ -1,17 +1,33 @@
-import React from "react";
-import "./Home.css";
+import gsap from 'gsap';
+import { default as React, useEffect, useRef } from "react";
+import Footer from '../Footer/Footer';
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Marquee from "../Marquee/Marquee";
+import Photo from "../Photos/Photo";
+// import Stories from '../Stories/Stories';
+import Testimonial from "../Testimonial/Testimonial";
+import "./Home.css";
 
 const Home = () => {
+
+  
+  const LanRef = useRef([]);
+    
+
+  useEffect(() => {
+  const tl = gsap.timeline({delay:1});
+  LanRef.current.forEach((el, index) => {
+      tl.fromTo(el, { opacity: 0, x: "-100" }, { opacity: 1, x: 0, duration: 1, ease: 'power2.out' }, index * 0.5);
+  });
+}, []);
   return (
     <>
       <Header />
       <div>
         <div className=" home-section container-fluid">
           <div className="welcome-note container">
-            <h1 className="con">Welcome</h1>
-            <div className="welcome-content">
+            <h1 className="con text-[5rem]">Welcome</h1>
+            <div className="welcome-content text-[2rem]">
               <p>
                 Imagine waking up to a job that lifts you up and transports you
                 to a different world.
@@ -27,30 +43,23 @@ const Home = () => {
               <p> The Wedding Story world!</p>
             </div>
           </div>
+          <div className="  Line border-t-2 border-white-490 mt-[10rem] flex justify-between p-4 lg:text-xl sm: text-[.7rem] ">
+          <h2  ref={(el) => (LanRef.current[0] = el)}  className='markus  xl:3xl text-white'> Every click, a love story; every frame, a treasure. 💖📸</h2>
+            <button className="text-white">scroll</button>
+          </div>
           <br></br>
         </div>
       </div>
       <div className="second-home-section container-fluid">
-        <p>
-          " Love stories, fleeting yet timeless, weave the fabric of our lives. 
-        </p>
-        <p>In their embrace, time pauses, offering a glimpse of eternity in moments that redefine our existence. "</p>
+        <p>हर तस्वीर एक कहानी का हिस्सा है, जो शब्दों के बिना सुनाई जाती है।</p>
+        <p>Every photo is a part of story which heard without words.</p>
         <h6>- Nishchay Srivastava -</h6>
       </div>
       <div className="third-home-section container-fluid">
         <h5>What We Love ?</h5>
       </div>
-      <div className="forth-home-section container-fluid">
-        <p>
-          We are die-hard, hopeless romantics at heart and, photographers by
-          qualification.
-        </p>
-        <p>
-          We love travelling all across the world to film the most important day
-          of your life. Narrating your wedding{" "}
-        </p>
-        <p>story through our lenses is a passion we all share as a team.</p>
-      </div>
+
+      <Marquee />
 
       <div className="fifth-home-section container-fluid">
         <h5> Do You Believe ?</h5>
@@ -84,10 +93,18 @@ const Home = () => {
           story. The ageless quality of our images complements the energy of our
           films.
         </p>
-
+        <br />
+        <br />
+        <br />
         <hr></hr>
         <br></br>
       </div>
+      <Photo />
+      <hr></hr>
+      {/* <Stories/> */}
+      <hr></hr>
+      <h1 className="testimonial text-[3rem] mt-[3rem]">TESTIMONIAL</h1>
+      <Testimonial />
       <Footer />
     </>
   );

@@ -1,17 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './Components/Home/Home';
-import {BrowserRouter , Routes, Route} from 'react-router-dom'
-import Gallery from './Components/Gallery/Gallery'
-import Video from './Components/Video/Video'
-import Faq from './Components/FAQ/Faq';
 import Contactus from './Components/ContactUs/Contactus';
+import Faq from './Components/FAQ/Faq';
+import Gallery from './Components/Gallery/Gallery';
+import Home from './Components/Home/Home';
+import Video from './Components/Video/Video';
 import UploadImage from './Components/admin/UploadImage';
-import Uploadfaq from './Components/admin/Uploadfaq';
 import UploadVideo from './Components/admin/UploadVideo';
+import Uploadfaq from './Components/admin/Uploadfaq';
 // import Prewedding from './Components/Prewedding/Prewedding';
 // import UploadPreweddingImg from './Components/admin/UploadPreweddingImg';
 // import FullPic from './Components/Gallery/FullPic'
-import { useEffect , useState} from 'react';
+import { useEffect, useState } from 'react';
 import Loading from './Components/Loading/Loading';
 
 function App() {

@@ -1,21 +1,18 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Abril+Fatface&family=Dancing+Script:wght@400..700&family=Lobster&family=Noto+Sans+Tifinagh&family=Protest+Revolution&family=Rubik+Burned&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 .home-section {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url("../image/first_pic.JPG");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
-  font-family: 'Roboto', sans-serif;
-  }
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 .home-content {
   width: auto;
   height: 18.75rem;
@@ -28,141 +25,170 @@
   width: auto;
   height:6.25rem;
 }
+
 .welcome-note {
   text-align: center;
   color: white;
   padding-top: 15.6rem;
-  /* font-family: "Raleway", sans-serif; */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-optical-sizing: auto;
 }
+
 .welcome-note h1 {
-  padding-top: 12.5rem;
-  font-family: "Raleway", sans-serif;
-  /* font-family: 'Borel', cursive; */
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 .welcome-content {
   margin-top:1.87rem;
+  
 }
 
 .welcome-note p {
   margin-top: 0.938rem;
   word-spacing: 0.3rem;
   padding-left: 3.125rem;
-  /* font-family: "Dancing Script", cursive; */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
   margin-top: 0.625rem;
   
 }
- 
-.second-home-section{
-   width: auto;
-   height: 17.5rem;
-   background-color: white;
-   text-align: center;
-   padding-top: 5.625rem;
-   color: #b55467;
-   font-family: "Dancing Script", cursive;
-   font-weight:bold;
+
+.second-home-section {
+  width: auto;
+  height: 17.5rem;
+  background-color: white;
+  text-align: center;
+  padding-top: 5.625rem;
+  color: #b55467;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
-.second-home-section h6{
+.second-home-section h6 {
   font-weight: bold;
 }
+
 .third-home-section {
-   width:auto;
-   height:18.756rem;
-   background-image:url('../image/love\ image.jpg');
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
+  width: auto;
+  height: 18.756rem;
+  background-image: url('../image/love\ image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.third-home-section h5{
-    text-align: center;
-    color:white;
-    padding-top: 7.2rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 3.125rem;
-    
+.third-home-section h5 {
+  text-align: center;
+  color: white;
+  padding-top: 7.2rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 3.125rem;
 }
 
-.forth-home-section{
-    width:auto;
-    height: 17.5rem;
-    background-color:white;
-    color: #b55467;
-    text-align: center;
-    padding-top:4.375rem;
-    background-repeat: no-repeat;
-    font-family: "Dancing Script", cursive;
-    font-weight:bold;
+.forth-home-section {
+  width: auto;
+  height: 17.5rem;
+  background-color: white;
+  color: #b55467;
+  text-align: center;
+  padding-top: 4.375rem;
+  background-repeat: no-repeat;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-weight: bold;
 }
 
-.forth-home-section p{
-    padding-top:0.6rem;
+.forth-home-section p {
+  padding-top: 0.6rem;
 }
 
-.fifth-home-section{
-    width:auto;
-    height: 18.75rem;
-    color: white;
-    background-image: url('../image/believe.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+.fifth-home-section {
+  width: auto;
+  height: 18.75rem;
+  color: white;
+  background-image: url('../image/believe.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.fifth-home-section h5{
-    text-align: center;
-    color:white;
-    padding-top:7.5rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 3.125rem;
+.fifth-home-section h5 {
+  text-align: center;
+  color: white;
+  padding-top: 7.5rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 3.125rem;
 }
 
-
-.sixth-home-section{
-    width: auto;
-    height:280px;
-    background-color:white;
-    text-align: center;
-    color: #b55467;
-    font-family: "Dancing Script", cursive;
-    padding-top: 5.625rem;
-    font-weight:bold;
+.sixth-home-section {
+  width: auto;
+  height: 280px;
+  background-color: white;
+  text-align: center;
+  color: #b55467;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+  padding-top: 5.625rem;
+  font-weight: bold;
 }
 
-.seventh-home-section{
-    width:auto;
-    height:17.5rem;
-    background:url("../image/believe.jpg");
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    text-align: center;
+.seventh-home-section {
+  width: auto;
+  height: 17.5rem;
+  background: url("../image/believe.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
 }
 
-.seventh-home-section h5{
-    text-align: center;
-    color:white;
-    padding-top: 7.5rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 3.125rem;
+.seventh-home-section h5 {
+  text-align: center;
+  color: white;
+  padding-top: 7.5rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 3.125rem;
 }
 
-.eight-home-section{
-    width:auto;
-    background-color: white;
-    text-align: center;
-    font-family: "Dancing Script", cursive;
-    padding-top: 3.125rem;
-    color: #b55467;
-    font-weight:bold;
+.eight-home-section {
+  width: auto;
+  background-color: white;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+  padding-top: 3.125rem;
+  color: #b55467;
+  font-weight: bold;
 }
 
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Playfair Display", serif; /* Applying font to testimonial section */
+}
 
-
-
+/* Applying font to client name as well */
+.testimonial .client-name {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: normal;
+}

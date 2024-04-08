@@ -1,9 +1,4 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
 
 * {
   margin: 0;
@@ -12,6 +7,15 @@
           box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+/* Update font-family to include Playfair Display */
+.main-nav, .menu-link ul li a, .logo h2, .social-media ul li, .client-name {
+  font-family: "Playfair Display", serif, "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 li {
   list-style: none;
 }
@@ -90,15 +94,6 @@ li {
   height: 3.75rem;
   display: -ms-grid;
   display: grid;
-  /* -ms-grid-columns: 3fr (1fr)[3];
-  grid-template-columns: 3fr repeat(3, 1fr);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; */
 }
 
 .social-media ul li {
@@ -111,8 +106,6 @@ li {
   -ms-grid-column-span: 1;
   grid-column: 2/3;
 }
-
-/* ----------- Grid part ends ----------------- */
 
 .logo h2 {
   font-size: 2.5rem;
@@ -156,7 +149,6 @@ li {
 /* responsive css style  */
 @media (max-width: 1080px) {
   .main-nav {
-    /* height: 90px; */
     -ms-grid-columns: 2rem 3fr 3fr 1fr 2rem;
     grid-template-columns: 2rem 3fr 3fr 1fr 2rem;
   }
@@ -292,7 +284,6 @@ li {
 
 @media (max-width: 798px) {
   .main-nav {
-    /* height: 96px; */
     -ms-grid-columns: 1rem 2fr 1fr 1fr 1rem;
     grid-template-columns: 1rem 2fr 1fr 1fr 1rem;
   }
