@@ -10,7 +10,7 @@ const Stories = () => {
     <div className=''>
        <div></div>
        <div></div>
-       {/* sumitt */}
+       {/* sumitt*/}
     </div>
     </div>
     </>
