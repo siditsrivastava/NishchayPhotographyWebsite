@@ -66,13 +66,13 @@ const TestimonialSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext();
-    }, 5000); // Change testimonial every 5 seconds
+    }, 4000); // Change testimonial every 5 seconds
 
     // Clear the interval and display the next testimonial after 5 seconds
     const timeout = setTimeout(() => {
       clearInterval(interval);
       goToNext();
-    }, 5000);
+    }, 4000);
 
     return () => {
       clearInterval(interval);
